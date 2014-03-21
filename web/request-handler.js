@@ -19,7 +19,7 @@ exports.handleRequest = function (req, res) {
     res.set(headers);
     if(req.method === "POST"){
       middleware.parsePost(req,res, function(req,res){
-        postRoutes.index(req,res,httpHelpers.serve404);
+        postRoutes.index(req,res, httpHelpers.serve404);
       });
     }else if(req.method === "GET"){
       middleware.staticServe(req,res, __dirname + "/public", httpHelpers.getRoutes);
